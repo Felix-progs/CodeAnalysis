@@ -1,36 +1,26 @@
-# Kodanalys och förbättring
+Ett skolprojekt i C# dÃ¤r syftet Ã¤r att analysera och fÃ¶rbÃ¤ttra befintlig kod.
+Programmet Ã¤r en enkel konsolapplikation fÃ¶r att hantera anvÃ¤ndare.
 
-## ?? Syfte
-Syftet med denna uppgift är att träna på att analysera befintlig kod, identifiera brister och förbättringsmöjligheter samt reflektera över hur förbättringarna påverkar kodens kvalitet, läsbarhet och underhållbarhet.
+Funktioner
 
-För VG ska studenten visa förmåga att självständigt analysera och utvärdera programmet samt motivera och genomföra förbättringar.
+LÃ¤gg till anvÃ¤ndare
 
-## ?? Uppgift
-Du får en färdig C#-applikation (console-app) som innehåller flera medvetna brister:
-- Dåliga namn på variabler och metoder
-- Duplicerad kod
-- Bristande användning av samlingsklasser
-- Onödigt komplicerade if/else-satser
-- Inkonsekvent kodstil
+Visa alla anvÃ¤ndare
 
-### Din uppgift
-1.  **Analysera koden**
-    - Beskriv de största problemen du identifierar (minst 3).
-    - Förklara varför dessa är problem, kopplat till principer för god kodkvalitet (ex. läsbarhet, DRY, enkelhet, underhållbarhet).
-2.  **Föreslå förbättringar**
-    - Ge konkreta förslag på hur koden kan förbättras.
-    - Motivera varför dina förslag gör koden bättre.
-3.  **Genomför förbättringarna**
-    - Refaktorera koden i Visual Studio.
-    - Använd Git för versionshantering och gör minst 3 separata commits där du beskriver vad som förbättras i varje steg.
-4.  **Reflektera**
-    - Skriv en kort text (1 A4- sida) där du sammanfattar vad du har lärt dig.
-    - Förklara hur dina förbättringar bidrar till att koden blir tydligare och mer lättunderhållen.
+Ta bort anvÃ¤ndare
 
-## ? Bedömning
-- **Godkänt (G):** Studenten identifierar problem i koden, föreslår och genomför rimliga förbättringar, samt använder Git korrekt för att dokumentera sitt arbete.
-- **Väl godkänt (VG):** Studenten analyserar koden på djupet, identifierar både syntaktiska och strukturella problem, motiverar förbättringarna väl och visar förmåga att reflektera över hur ändringarna påverkar långsiktig kodkvalitet.
+SÃ¶k efter anvÃ¤ndare
 
-## ?? Inlämning
-- Länk till ditt GitHub-repo med den refaktorerade koden (med commits).
-- En kort skriftlig rapport (PDF eller README i repot) med analys, förbättringsförslag och reflektion.
+Avsluta programmet
+
+FÃ¶rbÃ¤ttringar jÃ¤mfÃ¶rt med originalkod
+
+Tydligare och mer beskrivande variabelnamn
+
+Separering av logik (UserService) frÃ¥n meny och input/output (Program)
+
+AnvÃ¤ndning av switch istÃ¤llet fÃ¶r lÃ¥nga if/else-kedjor
+
+Ã–vergÃ¥ng frÃ¥n statisk array till List<User> som gÃ¶r koden mer flexibel
+
+ToString() i User gÃ¶r att utskriften blir mer lÃ¤sba
