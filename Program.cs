@@ -4,9 +4,6 @@ namespace CodeAnalysis;
 
 class Program
 {
-    static string[] users = new string[10];
-    static int totalUsers = 0;
-
     static void Main(string[] args)
     {
         var userService = new UserService();
