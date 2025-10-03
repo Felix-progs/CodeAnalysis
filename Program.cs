@@ -1,5 +1,5 @@
 ﻿using System;
-
+using CodeAnalysis;
 namespace CodeAnalysis;
 
 class Program
@@ -9,6 +9,7 @@ class Program
 
     static void Main(string[] args)
     {
+        var userService = new UserService();
         bool isRunning = true;
         while (isRunning)
         {
@@ -19,86 +20,39 @@ class Program
             Console.WriteLine("4. Sök användare");
             Console.WriteLine("5. Avsluta");
             string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("Ange namn: ");
+                    string nameToAdd = Console.ReadLine();
+                    userService.AddUser(nameToAdd);
+                    break;
 
-            if (choice == "1")
-            {
-                Console.Write("Ange namn: ");
-                string user = Console.ReadLine();
-                if (totalUsers < 10)
-                {
-                    users[totalUsers] = user;
-                    totalUsers++;
-                }
-                else
-                {
-                    Console.WriteLine("Listan är full!");
-                }
-            }
-            else if (choice == "2")
-            {
-                Console.WriteLine("Användare:");
-                for (int i = 0; i < totalUsers; i++)
-                {
-                    Console.WriteLine(users[i]);
-                }
-            }
-            else if (choice == "3")
-            {
-                Console.Write("Ange namn att ta bort: ");
-                string nameToRemove = Console.ReadLine();
-                int indexToRemove = -1;
-                for (int i = 0; i < totalUsers; i++)
-                {
-                    if (users[i] == nameToRemove)
-                    {
-                        indexToRemove = i;
-                        break;
-                    }
-                }
+                case "2":
+                    userService.ListUsers();
+                    break;
 
-                if (indexToRemove != -1)
-                {
-                    for (int i = indexToRemove; i < totalUsers - 1; i++)
-                    {
-                        users[i] = users[i + 1];
-                    }
-                    totalUsers--;
-                }
-                else
-                {
-                    Console.WriteLine("Användaren hittades inte.");
-                }
+                case "3":
+                    Console.Write("Ange namn för att ta bort: ");
+                    string nameToRemove = Console.ReadLine();
+                    userService.RemoveUser(nameToRemove);
+                    break;
+
+                case "4":
+                    Console.Write("Ange namn för att söka: ");
+                    string nameToSearch = Console.ReadLine();
+                    userService.SearchUser(nameToSearch);
+                    break;
+
+                case "5":
+                    isRunning = false;
+                    break;
+
+                default:
+                    Console.WriteLine("Ogiltigt val, försök igen.");
+                    break;
             }
-            else if (choice == "4")
-            {
-                Console.Write("Ange namn att söka: ");
-                string searchName = Console.ReadLine();
-                bool found = false;
-                for (int i = 0; i < totalUsers; i++)
-                {
-                    if (users[i] == searchName)
-                    {
-                        found = true;
-                        break;
-                    }
-                }
-                if (found)
-                {
-                    Console.WriteLine("Användaren finns i listan.");
-                }
-                else
-                {
-                    Console.WriteLine("Användaren hittades inte.");
-                }
-            }
-            else if (choice == "5")
-            {
-                isRunning = false;
-            }
-            else
-            {
-                Console.WriteLine("Ogiltigt val.");
-            }
+
             Console.WriteLine();
         }
     }
